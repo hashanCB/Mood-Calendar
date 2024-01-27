@@ -39,9 +39,40 @@ const Month = () => {
 
   const reandercalander = [];
 
-  const clickchage = (name) => {
-    console.log(name);
-  };
+  function clickchagec(actionc) {
+    if (actionc === "verygood") {
+      setVerygood(true);
+      setgood(false);
+      setnothing(false);
+      setbad(false);
+      setVerybad(false);
+    } else if (actionc === "good") {
+      setVerygood(false);
+      setgood(true);
+      setnothing(false);
+      setbad(false);
+      setVerybad(false);
+    } else if (actionc === "nothing") {
+      setVerygood(false);
+      setgood(false);
+      setnothing(true);
+      setbad(false);
+      setVerybad(false);
+    } else if (actionc === "bad") {
+      setVerygood(false);
+      setgood(false);
+      setnothing(false);
+      setbad(true);
+      setVerybad(false);
+    } else if (actionc === "verybad") {
+      setVerygood(false);
+      setgood(false);
+      setnothing(false);
+      setbad(false);
+      setVerybad(true);
+    }
+    console.log(actionc);
+  }
 
   const handleDateClick = (ky) => {
     let alreadyClicked = "";
@@ -189,30 +220,30 @@ const Month = () => {
             className={`text-green-500 w-8 h-8 ${
               verygood ? `bg-gray-500` : ""
             } rounded-full  cursor-pointer hover:scale-110 `}
-            onClick={clickchage(verygood)}
+            onClick={() => clickchagec("verygood")}
           />
           <FaRegFaceLaugh
-            className={`text-blue-500 w-8 h-8 
+            className={`text-blue-500 w-8 h-8 rounded-full 
             ${good ? `bg-gray-500` : ""} cursor-pointer hover:scale-110 `}
-            onClick={() => setgood(!good)}
+            onClick={() => clickchagec("good")}
           />
           <FaRegFaceMeh
-            className={`text-gray-500  ${
+            className={`text-gray-500 rounded-full   ${
               nothing ? `bg-gray-500` : ""
             } w-8 h-8 cursor-pointer hover:scale-110 `}
-            onClick={() => setnothing(!nothing)}
+            onClick={() => clickchagec("nothing")}
           />
           <FaRegFaceSadTear
-            className={`text-yellow-500 ${
+            className={`text-yellow-500 rounded-full  ${
               bad ? `bg-gray-500` : ""
             } w-8 h-8 cursor-pointer hover:scale-110 `}
-            onClick={() => setbad(!bad)}
+            onClick={() => clickchagec("bad")}
           />
           <FaRegFaceSadCry
-            className={`text-red-500 ${
+            className={`text-red-500  rounded-full  ${
               verybad ? `bg-gray-500` : ""
             } w-8 h-8 cursor-pointer hover:scale-110`}
-            onClick={() => setVerybad(!verybad)}
+            onClick={() => clickchagec("verybad")}
           />
         </div>
         <div className="text-center text-sm mb-4 ">
