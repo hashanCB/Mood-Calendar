@@ -210,8 +210,8 @@ const Month = () => {
     <>
       <div className="bg-white p-8">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-black">2019 Mood Calendar</h1>
-          <p className="text-sm text-gray-600 mt-1">
+          <h1 className="text-2xl font-bold text-black">2024 Mood Calendar</h1>
+          <p className="text-sm text-black mt-1">
             ~ color each day depending on what your mood was / is ~
           </p>
         </div>
@@ -229,7 +229,7 @@ const Month = () => {
           />
           <FaRegFaceMeh
             className={`text-gray-500 rounded-full   ${
-              nothing ? `bg-gray-500` : ""
+              nothing ? `bg-gray-200` : ""
             } w-8 h-8 cursor-pointer hover:scale-110 `}
             onClick={() => clickchagec("nothing")}
           />
@@ -246,12 +246,14 @@ const Month = () => {
             onClick={() => clickchagec("verybad")}
           />
         </div>
-        <div className="text-center text-sm mb-4 ">
+        <div className="text-center text-sm mb-4 text-black  ">
           Select mood: then click on the circles below
         </div>
-        <div className="flex flex-wrap justify-center -mx-2" />
+        <div className="flex flex-wrap justify-center mx-2 " />
 
-        <div className=" grid grid-cols-4 gap-5">{reandercalander}</div>
+        <div className=" grid grid-cols-1 ss:grid-cols-2  md:grid-cols-3 gap-10 px-[10%]">
+          {reandercalander}
+        </div>
         <div className="text-center text-xs text-gray-500 mt-10">
           Part of #100Days100Projects
         </div>
