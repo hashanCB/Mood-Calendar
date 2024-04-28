@@ -1,3 +1,4 @@
+//Hashan chanaka hashanchanaka.com
 "use client";
 import React, { useState, useRef } from "react";
 import { FaRegFaceLaugh } from "react-icons/fa6";
